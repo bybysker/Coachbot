@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gymplan_style.css') }}">
+    <title>Gym Coach Advice</title>
+</head>
+<body>
+    <h1>WORKOUT PLAN</h1>
+    <p><!-- Workout plan introduction --></p>
+    <table>
+        <!-- Workout plan table content -->
+    <p><!-- Workout plan progression suggestion --></p>
+    </table>
+    
+    <h1>NUTRITION PLAN</h1>
+    <p><!-- Nutrition plan introduction --></p>
+    <table>
+        <!-- Nutrition plan table content -->
+    <p><!-- Nutrition plan summary --></p>
+    </table>
+    
+    <h1>SLEEPING SCHEDULE</h1>
+    <p><!-- Sleeping schedule introduction --></p>
+    <p>
+        <!-- Sleeping schedule content -->
+    <p><!-- Sleeping schedule summary/details --></p>
+    </p>
+    
+    <h1>DISCIPLINE TIPS</h1>
+    <p><!-- Discipline tips introduction --></p>
+    <p>
+        <!-- Discipline tips content -->
+    <p><!-- Discipline tips summary/details --></p>
+    </p>
+    
+    <h1>Ideal Day</h1>
+    <p><!-- Ideal day introduction --></p>
+    <p>
+        <!-- Ideal day content -->
+    <p><!-- Ideal day summary/details --></p>
+    </p>
+    <form action="/download_pdf" method="post">
+    <button class="download-btn" type="submit">Download as PDF</button>
+  </form>
+</body>
+</html>

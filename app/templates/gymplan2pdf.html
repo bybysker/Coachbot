@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gym Plan</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Gym Plan</h1>
+    <pre>{{ workout_plan }}</pre>
+  </div>
+  <form action="/download_pdf" method="post">
+    <input type="hidden" name="response" value="{{ workout_plan }}">
+  </form>
+</body>
+</html>
