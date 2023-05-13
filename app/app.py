@@ -36,12 +36,12 @@ def generate_gymplan():
     intensity = request.form.get("intensity")
     discipline = request.form.get("discipline")
 
-    user_prompt = f""" Hello Coach! My name is {name}.\
+    user_prompt = f""" My name is {name}.\
     I am {age} years old and i weight {weight}kg and my height is {height} cm. \
     I'm a {sex} and I live in {city} \
     My goal is to {goal}. I would love to weight {ideal_weight}kg. \
     I will exercise mainly {place} .\
-    I can can manage to train {train_freq} times a week. I am at {level} level. \
+    I can manage to have {train_freq} training sessions a week. I am at {level} level. \
     Each time I train I can spend {duration} minutes. \
     On a scale of 1 to 5 I want each session to be intense at {intensity}
     On a scale of 1 to 5 I judge my discipline is at {discipline}
@@ -57,13 +57,11 @@ def download_pdf():
     filename = 'gymplan.pdf'
     file_path = os.path.join(local_path, filename)
 
-    print(response)
-
     # Render the gymplan2pdf.html template with the given response
     rendered_html = render_template_string(gymplan_header + session['response'] + gymplan_tail_no_pdf)
 
     # Create a CSS stylesheet to style the PDF
-    css_path = os.path.join(local_path, 'app/static', 'css/gymplan_style.css')
+    css_path = os.path.join(local_path, 'app/static', 'css/gymplan_style_pdf.css')
     with open(css_path) as f:
         css = CSS(string=f.read())
 
