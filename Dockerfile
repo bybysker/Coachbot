@@ -8,6 +8,9 @@ WORKDIR /app
 COPY . /app
 # COPY app /app
 
+
+RUN apt-get update && apt-get install -y ca-certificates
+
 # Install any needed packages specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
@@ -17,7 +20,7 @@ RUN chmod 644 /app/caadmin.netskope.com.cer
 # Set environment variables
 ENV FLASK_APP=app/app.py
 # Set the path to the CA certificate bundle
-ENV REQUESTS_CA_BUNDLE=caadmin.netskope.com.cer
+#ENV REQUESTS_CA_BUNDLE=caadmin.netskope.com.cer
 
 # Expose port 8080 for Flask
 EXPOSE 8080
