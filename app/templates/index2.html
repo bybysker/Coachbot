@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fill your infos</title>
+  <title>Coachbot</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -9,7 +9,9 @@
 <body>
   <div class="container">
     <form method="post" action="/generate_gymplan">
-      <p>Welcome</p>
+      <h1>Welcome to Coachbot!</h1>
+      <p>Fill in the form below with your information to receive a personalized gym plan tailored to your needs and goals.</p> 
+      <p>Coachbot will analyze your inputs and generate a customized workout plan to help you achieve your fitness objectives.</p>  
       <input type="text" placeholder="Name"><br>
       <input type="number" name="age" id="age" placeholder="Age" required><br>
       <input type="number" name="weight" id="weight" placeholder="Weight (kg)" required><br>
