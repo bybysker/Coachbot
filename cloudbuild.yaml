@@ -14,8 +14,8 @@ steps:
       - 'coachbot-app'
       - '--image'
       - 'gcr.io/$PROJECT_ID/coachbot'
-      - '--region'
-      - '$REGION'
+#      - '--region'
+#      - '$REGION'
       - '--allow-unauthenticated'
     # Deploy the Docker image to Cloud Run as a new revision of the 'coachbot-app' service.
 
