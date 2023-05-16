@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/coachbot', '..']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/coachbot', '.']
     # Build the Docker image using the parent directory and tag it with the appropriate image name.
 
   - name: 'gcr.io/cloud-builders/docker'
