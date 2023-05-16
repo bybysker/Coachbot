@@ -22,3 +22,7 @@ steps:
 images:
   - 'gcr.io/$PROJECT_ID/coachbot'
   # Specify the image that will be pushed to the Container Registry.
+
+
+options:
+  logging: CLOUD_LOGGING_ONLY
