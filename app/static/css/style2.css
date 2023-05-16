@@ -36,7 +36,16 @@ form {
     margin-bottom: 60px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
-  
+
+  form h1 {
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.7;
+    margin-top: 0;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
   form a {
     text-decoration: none;
     color: #ddd;
