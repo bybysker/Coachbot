@@ -1,3 +1,4 @@
+const loadingContainer = document.getElementById('loading-container');
 const loadingIndicator = document.getElementById("loading-indicator");
 const quoteText = document.getElementById("quote-text");
 
@@ -27,15 +28,18 @@ displayRandomQuote();
 function startLoadingProcess() {
   // Display the loading indicator
   loadingIndicator.style.display = "block";
+  loadingContainer.style.display = 'flex';
+
+  loadingContainer.classList.add('loading-animation');
 
   displayRandomQuote();
 }
-
-const form = document.querySelector('form');
-form.addEventListener('submit', handleSubmit);
 
 // Function to handle form submission
 function handleSubmit(event) {
   event.preventDefault();
   startLoadingProcess();
 }
+
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
