@@ -140,6 +140,24 @@ form {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
+.drop {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  transition: all 0.2s ease;
+}
+
+.drop-1, .drop-2, .drop-3, .drop-4, .drop-5 {
+  top: unset;
+  left: unset;
+  bottom: unset;
+  right: unset;
+}
+
 a,
 input:focus,
 select:focus,
@@ -147,6 +165,7 @@ textarea:focus,
 button:focus {
   outline: none;
 }
+
 
 #loading-container {
   position: fixed;
