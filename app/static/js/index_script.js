@@ -1,27 +1,35 @@
-// Generate random positions for the drops within the container
-function generateRandomPosition(container) {
-    const containerRect = container.getBoundingClientRect();
-    const dropWidth = 150; // Adjust as needed
-    const dropHeight = 150; // Adjust as needed
-  
-    const randomLeft = Math.floor(Math.random() * (containerRect.width - dropWidth));
-    const randomTop = Math.floor(Math.random() * (containerRect.height - dropHeight));
-  
-    return { left: randomLeft, top: randomTop };
-  }
-  
-  // Position the drops randomly within the container
-  function positionDrops() {
-    const container = document.querySelector('.container');
-    const drops = document.querySelectorAll('.drop');
-  
-    drops.forEach((drop) => {
-      const { left, top } = generateRandomPosition(container);
-      drop.style.left = `${left}px`;
-      drop.style.top = `${top}px`;
-    });
-  }
-  
-  // Call the positionDrops function on page load
-  window.addEventListener('load', positionDrops);
+const quotes = [
+  "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "Believe you can and you're halfway there. - Theodore Roosevelt",
+  "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+  // Add more quotes here
+];
+
+function displayRandomQuote() {
+  const quoteContainer = document.getElementById("quote-container");
+  const quoteText = document.getElementById("quote-text");
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomIndex];
+  quoteText.textContent = randomQuote;
+  quoteContainer.style.display = "block";
+}
+
+// Call the function to display a random quote
+displayRandomQuote();
+
+const loadingIndicator = document.getElementById("loading-indicator");
+const quoteText = document.getElementById("quote-text");
+
+function startLoadingProcess() {
+  // Display the loading indicator
+  loadingIndicator.style.display = "block";
+
+  // Update the quote text
+  quoteText.textContent = "Please wait while we process your request...";
+}
+
+// Call the function to start the loading process
+startLoadingProcess();
+
   
