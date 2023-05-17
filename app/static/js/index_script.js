@@ -27,12 +27,14 @@ displayRandomQuote();
 
 function startLoadingProcess() {
   // Display the loading indicator
-  loadingIndicator.style.display = "block";
+  //loadingIndicator.style.display = "block";
   loadingContainer.style.display = 'flex';
 
   loadingContainer.classList.add('loading-animation');
 
   displayRandomQuote();
+  // Set interval to change the quote every 10 seconds
+  setInterval(displayRandomQuote, 10000);
 }
 
 // Function to handle form submission
@@ -41,5 +43,5 @@ function handleSubmit(event) {
   startLoadingProcess();
 }
 
-const form = document.querySelector('form');
+const form = document.getElementById('user_infos');
 form.addEventListener('submit', handleSubmit);
