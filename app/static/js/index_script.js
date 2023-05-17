@@ -27,14 +27,14 @@ displayRandomQuote();
 
 function startLoadingProcess() {
   // Display the loading indicator
-  //loadingIndicator.style.display = "block";
+  loadingIndicator.style.display = "block";
   loadingContainer.style.display = 'flex';
 
-  loadingContainer.classList.add('loading-animation');
+  //loadingContainer.classList.add('loading-animation');
 
   //displayRandomQuote();
   // Set interval to change the quote every 10 seconds
-  setInterval(displayRandomQuote, 10000);
+  setInterval(displayRandomQuote, 5000);
 }
 
 // Function to handle form submission
