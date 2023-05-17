@@ -32,7 +32,7 @@ function startLoadingProcess() {
 
   loadingContainer.classList.add('loading-animation');
 
-  displayRandomQuote();
+  //displayRandomQuote();
   // Set interval to change the quote every 10 seconds
   setInterval(displayRandomQuote, 10000);
 }
