@@ -166,45 +166,82 @@ button:focus {
   outline: none;
 }
 
+/* Add the following CSS styles */
 
-#loading-container {
-  position: fixed;
-  top: 0;
-  left: 0;
+.loading-bar {
   width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 9999;
+  height: 10px;
+  background-color: #f2f2f2;
 }
 
-@keyframes spin {
+.progress {
+  width: 0;
+  height: 100%;
+  background-color: #FC466B;
+  animation: progressAnimation 1s infinite;
+}
+
+@keyframes progressAnimation {
   0% {
-    transform: rotate(0deg);
+    width: 0;
   }
   100% {
-    transform: rotate(360deg);
+    width: 100%;
   }
 }
 
-#loading-indicator {
-  width: 50px;
-  height: 50px;
-  border: 4px solid #fff;
-  border-top-color: #FC466B;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-#quote-container {
-  margin-top: 20px;
+.feedback-message {
+  margin-top: 10px;
+  font-size: 18px;
   text-align: center;
 }
 
-#quote-text {
-  font-size: 16px;
-  color: #fff;
+
+
+/*
+.loading-container {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
 }
+
+.loading-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #FC466B;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.feedback-message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes fitness-animation {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(90deg); }
+  50% { transform: rotate(180deg); }
+  75% { transform: rotate(270deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-bar::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #3F5EFB;
+  animation: fitness-animation 2s linear infinite;
+}
+*/
