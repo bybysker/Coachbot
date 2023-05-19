@@ -37,11 +37,13 @@ function generateRandomQuote() {
 // Function to update progress bar
 function updateProgressBar() {
   const progressBar = document.querySelector('.progress');
+  const percentageElement = document.querySelector('.percentage');
   let progress = 0;
 
   const interval = setInterval(() => {
     progress++;
     progressBar.style.width = progress + '%';
+    percentageElement.textContent = progress + '%';
 
     if (progress >= 100) {
       clearInterval(interval);
@@ -72,6 +74,9 @@ const form = document.querySelector('form');
 const loading_container = document.querySelector('.loading-container');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+  // Deactivate submit button
+  const submitButton = document.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
   loading_container.style.display = 'flex';
   startProcess();
 });
