@@ -1,24 +1,31 @@
 const quotes = [
-  "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
-  "The only way to do great work is to love what you do. - Steve Jobs",
-  "Believe you can and you're halfway there. - Theodore Roosevelt",
-  "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
-  "Eureka!",
-  "Innovation distinguishes between a leader and a follower.",
-  "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.",
-  "Genius is one percent inspiration and ninety-nine percent perspiration.",
+  "Fitness is not about being better than someone else. It's about being better than you used to be.",
+  "Take care of your body. It's the only place you have to live.",
+  "The only bad workout is the one that didn't happen.",
+  "Don't wish for a good body, work for it.",
+  "Success is what comes after you stop making excuses.",
+  "The pain you feel today will be the strength you feel tomorrow.",
   "The only way to do great work is to love what you do.",
-  "The only true wisdom is in knowing you know nothing. - Socrates",
-  "I think, therefore I am. - René Descartes",
-  "It is the mark of an educated mind to be able to entertain a thought without accepting it. - Aristotle",
-  "Doubt is the origin of wisdom. - René Descartes",
-  "The greatest glory in living lies not in never falling, but in rising every time we fall. - Isaac Newton",
-  "The more I learn, the more I realize how much I don't know. - Albert Einstein",
-  "In the middle of difficulty lies opportunity. - Albert Einstein",
-  "The function of education is to teach one to think intensively and to think critically. Intelligence plus character - that is the goal of true education. - Martin Luther King Jr.",
-  "The only way to do great work igit s to love what you do. - Steve Jobs",
-  "We cannot solve our problems with the same thinking we used when we created them. - Albert Einstein"
+  "The difference between who you are and who you want to be is what you do.",
+  "Discipline is doing what needs to be done, even if you don't want to.",
+  "Exercise is a celebration of what your body can do.",
+  "The body achieves what the mind believes.",
+  "Don't stop when you're tired. Stop when you're done.",
+  "Your health is an investment, not an expense.",
+  "Fitness is not a destination, it's a way of life.",
+  "Believe in yourself and all that you are. Know that there is something inside you that is greater than any obstacle.",
+  "The only limit to our realization of tomorrow will be our doubts of today.",
+  "Strive for progress, not perfection.",
+  "Be stronger than your excuses.",
+  "Well-being is the foundation of everything. Without it, nothing else matters.",
+  "Success starts with self-discipline.",
+  "Good things come to those who sweat.",
+  "Your body can stand almost anything. It's your mind that you have to convince.",
+  "Make time for yourself. Invest in your mind, body, and soul.",
+  "Eat well, move daily, hydrate often, sleep lots, love your body, repeat for life.",
+  "The only person you should try to be better than is the person you were yesterday.",
 ];
+
 
 
 // Function to generate random quote
@@ -51,7 +58,7 @@ function updateFeedbackMessages() {
   setInterval(() => {
     const randomQuote = generateRandomQuote();
     feedbackMessages.textContent = randomQuote;
-  }, 3000);
+  }, 5000);
 }
 
 // Function to initiate the process
@@ -62,7 +69,9 @@ function startProcess() {
 
 // Call the startProcess function when the form is submitted
 const form = document.querySelector('form');
+const loading_container = document.querySelector('.loading-container');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+  loading_container.style.display = 'flex';
   startProcess();
 });
