@@ -72,11 +72,27 @@ function startProcess() {
 // Call the startProcess function when the form is submitted
 const form = document.querySelector('form');
 const loading_container = document.querySelector('.loading-container');
+
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   // Deactivate submit button
   const submitButton = document.querySelector('button[type="submit"]');
+
   submitButton.disabled = true;
+
   loading_container.style.display = 'flex';
+
   startProcess();
+
+  // Simulate form submission delay
+  setTimeout(function() {
+    // Hide the loading animation
+    loading_container.style.display = "none";
+
+    // Enable the submit button
+    submitButton.disabled = false;
+
+    // Redirect to the gymplan page or display the response as needed
+    window.location.href = "/generate_gymplan";
+  }, 90000);
 });
