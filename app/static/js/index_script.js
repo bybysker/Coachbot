@@ -1,7 +1,3 @@
-const loadingContainer = document.getElementById('loading-container');
-const loadingIndicator = document.getElementById("loading-indicator");
-const quoteText = document.getElementById("quote-text");
-
 const quotes = [
   "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
   "The only way to do great work is to love what you do. - Steve Jobs",
@@ -25,37 +21,48 @@ const quotes = [
 ];
 
 
-function displayRandomQuote() {
-  const quoteContainer = document.getElementById("quote-container");
-  const quoteText = document.getElementById("quote-text");
+// Function to generate random quote
+function generateRandomQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  const randomQuote = quotes[randomIndex];
-  quoteText.textContent = randomQuote;
-  quoteContainer.style.display = "block";
+  return quotes[randomIndex];
 }
 
-// Call the function to display a random quote
-displayRandomQuote();
+// Function to update progress bar
+function updateProgressBar() {
+  const progressBar = document.querySelector('.progress');
+  let progress = 0;
 
+  const interval = setInterval(() => {
+    progress++;
+    progressBar.style.width = progress + '%';
 
+    if (progress >= 100) {
+      clearInterval(interval);
+    }
+  }, 900);
 
-function startLoadingProcess() {
-  // Display the loading indicator
-  loadingIndicator.style.display = "block";
-  loadingContainer.style.display = 'flex';
-
-  //loadingContainer.classList.add('loading-animation');
-
-  //displayRandomQuote();
-  // Set interval to change the quote every 10 seconds
-  setInterval(displayRandomQuote, 5000);
+  return interval;
 }
 
-// Function to handle form submission
-function handleSubmit(event) {
+// Function to update feedback messages
+function updateFeedbackMessages() {
+  const feedbackMessages = document.querySelector('.feedback-messages');
+
+  setInterval(() => {
+    const randomQuote = generateRandomQuote();
+    feedbackMessages.textContent = randomQuote;
+  }, 3000);
+}
+
+// Function to initiate the process
+function startProcess() {
+  const progressBarInterval = updateProgressBar();
+  updateFeedbackMessages();
+}
+
+// Call the startProcess function when the form is submitted
+const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
   event.preventDefault();
-  startLoadingProcess();
-}
-
-const form = document.getElementById('user_infos');
-form.addEventListener('submit', handleSubmit);
+  startProcess();
+});
