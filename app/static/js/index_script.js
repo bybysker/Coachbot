@@ -1,8 +1,7 @@
-/*
 const loadingContainer = document.getElementById('loading-container');
 const loadingIndicator = document.getElementById("loading-indicator");
 const quoteText = document.getElementById("quote-text");
-*/
+
 const quotes = [
   "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
   "The only way to do great work is to love what you do. - Steve Jobs",
@@ -21,43 +20,42 @@ const quotes = [
   "The more I learn, the more I realize how much I don't know. - Albert Einstein",
   "In the middle of difficulty lies opportunity. - Albert Einstein",
   "The function of education is to teach one to think intensively and to think critically. Intelligence plus character - that is the goal of true education. - Martin Luther King Jr.",
-  "The only way to do great work is to love what you do. - Steve Jobs",
+  "The only way to do great work igit s to love what you do. - Steve Jobs",
   "We cannot solve our problems with the same thinking we used when we created them. - Albert Einstein"
 ];
 
-// Function to display random quote
+
 function displayRandomQuote() {
-  const quoteElement = document.getElementById("quote");
+  const quoteContainer = document.getElementById("quote-container");
+  const quoteText = document.getElementById("quote-text");
   const randomIndex = Math.floor(Math.random() * quotes.length);
-  quoteElement.textContent = quotes[randomIndex];
+  const randomQuote = quotes[randomIndex];
+  quoteText.textContent = randomQuote;
+  quoteContainer.style.display = "block";
 }
 
-// Function to simulate form submission and show loading bar and feedback messages
-function submitForm() {
-  // Display loading bar
-  const progressBar = document.querySelector(".progress");
-  progressBar.style.width = "0";
-  progressBar.style.animationPlayState = "running";
+// Call the function to display a random quote
+displayRandomQuote();
 
-  // Display random feedback messages
-  const feedbackMessage = document.querySelector(".feedback-message");
-  feedbackMessage.style.display = "block";
-  displayRandomQuote();
-  setInterval(displayRandomQuote, 3000); // Change quote every 3 seconds
 
-  // Simulate form submission delay
-  setTimeout(() => {
-    // Hide loading bar
-    progressBar.style.animationPlayState = "paused";
 
-    // Show completion message
-    feedbackMessage.textContent = "Your gym plan is ready!";
-    // Additional actions or redirection after form submission
-  }, 60000); // Simulating a 1-minute processing time
+function startLoadingProcess() {
+  // Display the loading indicator
+  loadingIndicator.style.display = "block";
+  loadingContainer.style.display = 'flex';
+
+  //loadingContainer.classList.add('loading-animation');
+
+  //displayRandomQuote();
+  // Set interval to change the quote every 10 seconds
+  setInterval(displayRandomQuote, 5000);
 }
 
-// Call the submitForm function when the form is submitted
-document.querySelector("form").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent form submission
-  submitForm();
-});
+// Function to handle form submission
+function handleSubmit(event) {
+  event.preventDefault();
+  startLoadingProcess();
+}
+
+const form = document.getElementById('user_infos');
+form.addEventListener('submit', handleSubmit);
