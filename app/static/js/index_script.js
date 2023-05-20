@@ -80,6 +80,10 @@ form.addEventListener('submit', (event) => {
 
   submitButton.disabled = true;
 
+  const container = document.querySelector('.container');
+  
+  container.style.display = 'none';
+
   loading_container.style.display = 'flex';
 
   startProcess();
