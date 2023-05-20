@@ -69,6 +69,10 @@ function startProcess() {
   updateFeedbackMessages();
 }
 
+function valider() {
+  return true;
+}
+
 // Call the startProcess function when the form is submitted
 const form = document.querySelector('form');
 const loading_container = document.querySelector('.loading-container');
@@ -79,6 +83,8 @@ form.addEventListener('submit', (event) => {
   const submitButton = document.querySelector('button[type="submit"]');
 
   submitButton.disabled = true;
+
+  valider();
 
   const container = document.querySelector('.container');
 
