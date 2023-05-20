@@ -35,20 +35,13 @@
       <input type="number" name="discipline" id="discipline" min="1" max="5" placeholder="Discipline (1-5)" required><br>
       <button type="submit">Get my GymPlan</button>
     </form>
-    <div class="loading-container">
-      <div class="loading-bar">
-        <div class="progress"></div>
-        <div class="percentage"></div>
-      </div>
-      <div class="feedback-messages"></div>
+  </div>
+  <div class="loading-container">
+    <div class="loading-bar">
+      <div class="progress"></div>
+      <div class="percentage"></div>
     </div>
-    <div class="drops">
-      <div class="drop drop-1"></div>
-      <div class="drop drop-2"></div>
-      <div class="drop drop-3"></div>
-      <div class="drop drop-4"></div>
-      <div class="drop drop-5"></div>
-    </div>
+    <div class="feedback-messages"></div>
   </div>
 
   <script src="{{ url_for('static', filename='js/index_script.js') }}"></script>
