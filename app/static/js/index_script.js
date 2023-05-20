@@ -81,7 +81,7 @@ form.addEventListener('submit', (event) => {
   submitButton.disabled = true;
 
   const container = document.querySelector('.container');
-  
+
   container.style.display = 'none';
 
   loading_container.style.display = 'flex';
@@ -89,7 +89,7 @@ form.addEventListener('submit', (event) => {
   startProcess();
 
   // Simulate form submission delay
-  setTimeout(function() {
+  /*setTimeout(function() {
     // Hide the loading animation
     loading_container.style.display = "none";
 
@@ -98,5 +98,5 @@ form.addEventListener('submit', (event) => {
 
     // Redirect to the gymplan page or display the response as needed
     window.location.href = "/generate_gymplan";
-  }, 90000);
+  }, 90000);*/
 });
