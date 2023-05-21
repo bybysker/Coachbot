@@ -69,7 +69,7 @@ function startProcess() {
   updateFeedbackMessages();
 
   // Submit the form via AJAX
-  fetch('/generate_gymplan', {
+  fetch('/', {
     method: 'POST',
     body: new FormData(form),
   })
