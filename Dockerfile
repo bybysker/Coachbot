@@ -20,7 +20,7 @@ RUN chmod 644 /app/caadmin.netskope.com.cer
 # Set environment variables
 ENV FLASK_APP=app/app.py
 # Set the path to the CA certificate bundle
-ENV REQUESTS_CA_BUNDLE=caadmin.netskope.com.cer
+#ENV REQUESTS_CA_BUNDLE=caadmin.netskope.com.cer
 
 # Expose port 8080 for Flask
 EXPOSE 8080
