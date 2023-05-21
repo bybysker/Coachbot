@@ -67,23 +67,6 @@ function updateFeedbackMessages() {
 function startProcess() {
   const progressBarInterval = updateProgressBar();
   updateFeedbackMessages();
-}
-
-// Call the startProcess function when the form is submitted
-const form = document.querySelector('form');
-const loadingContainer = document.querySelector('.loading-container');
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  // Deactivate submit button
-  const submitButton = document.querySelector('button[type="submit"]');
-  submitButton.disabled = true;
-
-  // Hide the form and display the loading animation
-  const container = document.querySelector('.container');
-  container.style.display = 'none';
-  loadingContainer.style.display = 'flex';
 
   // Submit the form via AJAX
   fetch('/generate_gymplan', {
@@ -111,17 +94,25 @@ form.addEventListener('submit', (event) => {
       // Handle error condition
     });
 
+}
+
+// Call the startProcess function when the form is submitted
+const form = document.querySelector('form');
+const loadingContainer = document.querySelector('.loading-container');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  // Deactivate submit button
+  const submitButton = document.querySelector('button[type="submit"]');
+  submitButton.disabled = true;
+
+  // Hide the form and display the loading animation
+  const container = document.querySelector('.container');
+  container.style.display = 'none';
+  loadingContainer.style.display = 'flex';
+
+  
   startProcess();
 
-  // Simulate form submission delay
-  /*setTimeout(function() {
-    // Hide the loading animation
-    loading_container.style.display = "none";
-
-    // Enable the submit button
-    submitButton.disabled = false;
-
-    // Redirect to the gymplan page or display the response as needed
-    window.location.href = "/generate_gymplan";
-  }, 90000);*/
 });
