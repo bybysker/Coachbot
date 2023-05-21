@@ -50,7 +50,7 @@ def generate_gymplan():
     """
 
     session['response'] = chatbot.get_response(user_prompt)
-    return 
+    return None
 
 @app.route("/generate_gymplan", methods=["GET"])
 def generate_gymplan():
