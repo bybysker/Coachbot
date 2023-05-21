@@ -47,7 +47,12 @@ def index():
             On a scale of 1 to 5 I judge my discipline is at {discipline}
             """
 
-            session['response'] = chatbot.get_response(user_prompt)
+            # Make the OpenAI API call using user input
+            response = chatbot.get_response(user_prompt)
+
+            # Store the OpenAI API response in the session
+            session['response'] = response
+
 
             # Redirect the user to the generate_gymplan route
             return redirect(url_for('generate_gymplan'))
