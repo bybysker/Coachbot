@@ -19,7 +19,7 @@ def index():
     return render_template("index2.html")
 
 
-@app.route("/generate_gymplan", methods=["POST"])
+@app.route("/generate_gymplan", methods=["GET", "POST"])
 def generate_gymplan():
     name = request.form.get("name")
     age = request.form.get("age")
