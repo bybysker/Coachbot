@@ -14,7 +14,7 @@ app.secret_key = 'supersecretkey'
 chatbot = CoachBot()
 local_path = os.getcwd()
 
-@app.route("/")
+@app.route("/", methods=["GET","POST"])
 def index():
     return render_template("index2.html")
 
