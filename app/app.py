@@ -57,7 +57,8 @@ def index():
 
 @app.route("/generate_gymplan", methods=["POST"])
 def generate_gymplan():
-    response = session['response']
+    #response = session['response']
+    response = session.get('response')
     return render_template_string(gymplan_header + response + gymplan_tail)
 
 @app.route("/download_pdf", methods=["POST"])
