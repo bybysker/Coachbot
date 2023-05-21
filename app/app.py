@@ -19,7 +19,7 @@ def index():
     return render_template("index2.html")
 
 
-@app.route("/generate_gymplan", methods=["GET", "POST"])
+@app.route("/generate_gymplan", methods=["POST"])
 def generate_gymplan():
     name = request.form.get("name")
     age = request.form.get("age")
@@ -36,6 +36,8 @@ def generate_gymplan():
     intensity = request.form.get("intensity")
     discipline = request.form.get("discipline")
 
+    print(name + intensity + discipline)
+
     user_prompt = f""" My name is {name}.\
     I am {age} years old and i weight {weight}kg and my height is {height} cm. \
     I'm a {sex} and I live in {city} \
@@ -48,7 +50,10 @@ def generate_gymplan():
     """
 
     session['response'] = chatbot.get_response(user_prompt)
+    return 
 
+@app.route("/generate_gymplan", methods=["GET"])
+def generate_gymplan():
     return render_template_string(gymplan_header + session['response'] + gymplan_tail)
 
 @app.route("/download_pdf", methods=["GET", "POST"])
