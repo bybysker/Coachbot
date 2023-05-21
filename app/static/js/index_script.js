@@ -84,6 +84,7 @@ function startProcess() {
       loadingContainer.style.display = 'none';
 
       // Enable the submit button
+      const submitButton = document.querySelector('button[type="submit"]');
       submitButton.disabled = false;
 
       // Redirect to the gymplan page or display the response as needed
