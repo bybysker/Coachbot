@@ -53,7 +53,7 @@ def generate_gymplan():
     return None
 
 @app.route("/generate_gymplan", methods=["GET"])
-def generate_gymplan():
+def generate_gymplan2():
     return render_template_string(gymplan_header + session['response'] + gymplan_tail)
 
 @app.route("/download_pdf", methods=["GET", "POST"])
