@@ -21,33 +21,35 @@ def index():
 
 @app.route("/generate_gymplan", methods=["GET","POST"])
 def generate_gymplan():
-    name = request.form.get("name")
-    age = request.form.get("age")
-    weight = request.form.get("weight")
-    height = request.form.get("height")
-    sex = request.form.get("sex")
-    city = request.form.get("city")
-    goal = request.form.get("goal")
-    ideal_weight = request.form.get("ideal_weight")
-    place = request.form.get("place")
-    train_freq = request.form.get("train_freq")
-    level = request.form.get("level")
-    duration = request.form.get("duration")
-    intensity = request.form.get("intensity")
-    discipline = request.form.get("discipline")
+    
+    if request.method == "POST":
+        name = request.form.get("name")
+        age = request.form.get("age")
+        weight = request.form.get("weight")
+        height = request.form.get("height")
+        sex = request.form.get("sex")
+        city = request.form.get("city")
+        goal = request.form.get("goal")
+        ideal_weight = request.form.get("ideal_weight")
+        place = request.form.get("place")
+        train_freq = request.form.get("train_freq")
+        level = request.form.get("level")
+        duration = request.form.get("duration")
+        intensity = request.form.get("intensity")
+        discipline = request.form.get("discipline")
 
-    user_prompt = f""" My name is {name}.\
-    I am {age} years old and i weight {weight}kg and my height is {height} cm. \
-    I'm a {sex} and I live in {city} \
-    My goal is to {goal}. I would love to weight {ideal_weight}kg. \
-    I will exercise mainly {place} .\
-    I can manage to have {train_freq} training sessions a week. I am at {level} level. \
-    Each time I train I can spend {duration} minutes. \
-    On a scale of 1 to 5 I want each session to be intense at {intensity}
-    On a scale of 1 to 5 I judge my discipline is at {discipline}
-    """
+        user_prompt = f""" My name is {name}.\
+        I am {age} years old and i weight {weight}kg and my height is {height} cm. \
+        I'm a {sex} and I live in {city} \
+        My goal is to {goal}. I would love to weight {ideal_weight}kg. \
+        I will exercise mainly {place} .\
+        I can manage to have {train_freq} training sessions a week. I am at {level} level. \
+        Each time I train I can spend {duration} minutes. \
+        On a scale of 1 to 5 I want each session to be intense at {intensity}
+        On a scale of 1 to 5 I judge my discipline is at {discipline}
+        """
 
-    session['response'] = chatbot.get_response(user_prompt)
+        session['response'] = chatbot.get_response(user_prompt)
 
     return render_template_string(gymplan_header + session['response'] + gymplan_tail)
 
