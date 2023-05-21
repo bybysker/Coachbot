@@ -69,28 +69,47 @@ function startProcess() {
   updateFeedbackMessages();
 }
 
-function valider() {
-  return true;
-}
-
 // Call the startProcess function when the form is submitted
 const form = document.querySelector('form');
-const loading_container = document.querySelector('.loading-container');
+const loadingContainer = document.querySelector('.loading-container');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+
   // Deactivate submit button
   const submitButton = document.querySelector('button[type="submit"]');
-
   submitButton.disabled = true;
 
-  valider();
-
+  // Hide the form and display the loading animation
   const container = document.querySelector('.container');
-
   container.style.display = 'none';
+  loadingContainer.style.display = 'flex';
 
-  loading_container.style.display = 'flex';
+  // Submit the form via AJAX
+  fetch('/generate_gymplan', {
+    method: 'POST',
+    body: new FormData(form),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.text();
+      }
+      throw new Error('Network response was not ok.');
+    })
+    .then((responseText) => {
+      // Hide the loading animation
+      loadingContainer.style.display = 'none';
+
+      // Enable the submit button
+      submitButton.disabled = false;
+
+      // Redirect to the gymplan page or display the response as needed
+      window.location.href = '/generate_gymplan';
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      // Handle error condition
+    });
 
   startProcess();
 
