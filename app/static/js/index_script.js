@@ -69,7 +69,7 @@ function startProcess() {
   updateFeedbackMessages();
 
   // Submit the form via AJAX
-  fetch('https://coachbot-app-cea6tdhi5q-ew.a.run.app/generate_gymplan', {
+  fetch('/generate_gymplan', {
     method: 'POST',
     body: new FormData(form),
   })
