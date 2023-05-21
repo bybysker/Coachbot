@@ -55,7 +55,7 @@ def index():
 
 
             # Redirect the user to the generate_gymplan route
-            return redirect(url_for('generate_gymplan'))
+            #return redirect(url_for('generate_gymplan'))
 
     return render_template("index2.html")
 
