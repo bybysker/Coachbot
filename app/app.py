@@ -51,7 +51,7 @@ def generate_gymplan():
 
     return render_template_string(gymplan_header + session['response'] + gymplan_tail)
 
-@app.route("/download_pdf", methods=["POST"])
+@app.route("/download_pdf", methods=["GET", "POST"])
 def download_pdf():
     response = session['response']
     filename = 'gymplan.pdf'
