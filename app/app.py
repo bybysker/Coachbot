@@ -37,16 +37,19 @@ def generate_gymplan():
         duration = request.form.get("duration")
         intensity = request.form.get("intensity")
         discipline = request.form.get("discipline")
+        equipment = request.form.get("equipment")
+        details = request.form.get("details")
 
         user_prompt = f""" My name is {name}.\
         I am {age} years old and i weight {weight}kg and my height is {height} cm. \
         I'm a {sex} and I live in {city} \
         My goal is to {goal}. I would love to weight {ideal_weight}kg. \
-        I will exercise mainly {place} .\
+        I will exercise mainly {place} and will have {equipment} as equipment.\
         I can manage to have {train_freq} training sessions a week. I am at {level} level. \
         Each time I train I can spend {duration} minutes. \
         On a scale of 1 to 5 I want each session to be intense at {intensity}
         On a scale of 1 to 5 I judge my discipline is at {discipline}
+        Any other details: {details}
         """
 
         session['response'] = chatbot.get_response(user_prompt)

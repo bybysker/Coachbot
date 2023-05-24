@@ -21,10 +21,30 @@
         <option value="woman">Woman</option>
       </select><br>
       <input type="text" name="city" id="city" placeholder="City" required><br>
-      <input type="text" name="goal" id="goal" placeholder="Goal" required><br>
+      <select name="goal" id="goal" placeholder="Goal" required>
+        <option value="lose weight">Lose weight</option>
+        <option value="gain weight">Gain weight</option>
+        <option value="be athletic">Be athletic</option>
+        <option value="get a routine">Machines</option>
+      </select><br>
       <input type="number" name="ideal_weight" id="ideal_weight" placeholder="Ideal Weight (kg)" required><br>
-      <input type="text" name="place" id="place" placeholder="Place of Exercise" required><br>
-      <input type="number" name="train_freq" id="train_freq" placeholder="Training Frequency" required><br>
+      <select name="place" id="place" placeholder="Place of Exercise" required>
+        <option value="at home">Home</option>
+        <option value="at the gym">Gym</option>
+        <option value="outside in a park">Park (Streetworkout)</option>
+        <option value="at home and at the gym">Home AND Gym</option>
+      </select><br>
+      <select name="equipment" id="equipment" placeholder="Equipment" required>
+        <option value="nothing">None</option>
+        <option value="dumbbells">Dumbbells</option>
+        <option value="barbell">Barbell</option>
+        <option value="dumbbells and barbell">Dumbbells AND Barbell</option>
+        <option value="machines">Machines</option>
+        <option value="dumbbells and machines">Dumbbells AND Machines</option>
+        <option value="barbell and machines">Barbell AND Machines</option>
+        <option value="dumbbells, barbell and machines">Dumbbells, Barbell AND Machines</option>
+      </select><br>
+      <input type="number" name="train_freq" id="train_freq" min="1" max="5" placeholder="Training Frequency (Days/week)" required><br>
       <select name="level" id="level" placeholder="Training Level" required>
         <option value="beginner">Beginner</option>
         <option value="intermediate">Intermediate</option>
@@ -33,6 +53,7 @@
       <input type="number" name="duration" id="duration" placeholder="Training Duration (minutes)" required><br>
       <input type="number" name="intensity" id="intensity" min="1" max="5" placeholder="Training Intensity (1-5)" required><br>
       <input type="number" name="discipline" id="discipline" min="1" max="5" placeholder="Discipline (1-5)" required><br>
+      <input type="text" name="details" id="details" placeholder="Any Specific details ?" required><br>
       <button type="submit">Get my GymPlan</button>
     </form>
   </div>
