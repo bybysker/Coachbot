@@ -48,7 +48,7 @@ function updateProgressBar() {
     if (progress >= 100) {
       clearInterval(interval);
     }
-  }, 900);
+  }, 1200);
 
   return interval;
 }
