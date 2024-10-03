@@ -73,18 +73,31 @@ pip install Flask WeasyPrint python-dotenv
 ## File Structure
 
 ```bash
-.
-├── app.py                     # Main Flask app
-├── coachbot.py                 # Custom AI-based CoachBot for generating gym plans
-├── config.py                   # Contains header, footer, and styles for the gym plan
-├── templates/
-│   └── index2.html             # Main template for the app
-├── static/
-│   └── css/
-│       └── gymplan_style_pdf.css   # Stylesheet for the PDF generation
-├── .env                        # Environment variables (not included in repo)
-├── requirements.txt            # Project dependencies
-└── README.md                   # You're reading this!
+├── app/
+│   ├── __pycache__/
+│   ├── static/
+│   │   ├── css/                  # Stylesheets (includes gymplan_style_pdf.css)
+│   │   └── js/                   # Javascript files (if any)
+│   ├── templates/                # HTML templates
+│   │   ├── gymplan.html
+│   │   ├── gymplan2pdf.html
+│   │   └── index2.html
+│   ├── __init__.py               # Initialization for the app (optional, good for scalability)
+│   ├── routes.py                 # Handles the routes (endpoints)
+│   ├── forms.py                  # If you need to handle form validation logic, separate this here (optional)
+│   └── utils.py                  # Helper functions, possibly PDF generation or chatbot interactions
+├── coachbot/
+│   ├── __init__.py               # Init file for CoachBot
+│   ├── coach.py                  # Main CoachBot logic (existing coachbot.py)
+│   ├── config.py                 # Configuration for the bot responses (includes gymplan header/footer)
+│   ├── prompts.py                # Predefined prompts, if you have many prewritten prompts
+├── .env                          # Environment variables
+├── Dockerfile                    # Docker setup for containerization
+├── requirements.txt              # Python package dependencies
+├── README.md                     # Documentation (this file)
+├── Untitled-1.ipynb              # Jupyter notebook (assuming this is for testing/exploring code)
+├── cloudbuild.yaml               # Cloud build configuration
+└── script.sh                     # Deployment or setup scripts
 ```
 
 ## Customization
